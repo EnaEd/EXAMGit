@@ -91,7 +91,7 @@ namespace C____Exam
         public Dictionary<int,Menu> Create( Menu left,MenuFlag flag) {
             Dictionary<int, Menu> newDict = new Dictionary<int, Menu>();
             var menuCreate = from i in left.listMenu
-                             where i.Value.FlagMenu.Equals(flag)
+                             where i.Value.FlagMenu.Equals(flag)||i.Value.FlagMenu.Equals(MenuFlag.All)
                              select i;
             foreach (var item in menuCreate)
             {
@@ -101,6 +101,7 @@ namespace C____Exam
             return newDict;
             
         }
+        
 
 
     }
